@@ -20,7 +20,9 @@ export function Providers({ children }: Props) {
         shouldPersist
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Toaster />
           {children}
+          <TailwindIndicator />
         </ThemeProvider>
       </CartProvider>
     </>
