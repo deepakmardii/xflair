@@ -1,3 +1,4 @@
+"use client"
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
 
@@ -7,10 +8,13 @@ import { cn } from "@/lib/utils"
 import { ProductFilters } from "@/components/product-filters"
 import { ProductGrid } from "@/components/product-grid"
 import { ProductSort } from "@/components/product-sort"
+import { seedSanityData } from "@/lib/seed"
 
 interface Props {}
 
-export default function Page() {
+export default async function Page() {
+await seedSanityData()
+
   return (
     <div>
       <div className="px-4 pt-20 text-center">
